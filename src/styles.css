@@ -1,0 +1,100 @@
+body {
+  background-image: url("https://media.istockphoto.com/id/517188688/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B3%D0%BE%D1%80%D0%BD%D1%8B%D0%B9-%D0%BB%D0%B0%D0%BD%D0%B4%D1%88%D0%B0%D1%84%D1%82.jpg?s=612x612&w=0&k=20&c=6Qfb5YCLIkiq_hYxRmTj8t2FWwr4Yrdq2CRGVwj5Ymk=");
+  background-attachment: fixed;
+  background-size: cover;
+}
+.App {
+  margin: 12px auto;
+  width: 70%;
+  font-family: sans-serif;
+  background: rgba(141, 163, 80, 0.2);
+  border: 1px solid rgb(45, 53, 23);
+  padding: 12px;
+  border-radius: 12px;
+}
+.label-city-name {
+  font-weight: 500;
+  font-size: 24px;
+  margin-right: 8px;
+}
+.form-text {
+  size: 40;
+  width: 240px;
+  padding: 8px;
+  padding-left: 16px;
+  border: 2px solid rgb(79, 85, 64);
+  border-radius: 8px;
+  font-size: 24px;
+  margin: 8px 0;
+  color: #000;
+  background-color: rgba(118, 139, 60, 0.3);
+}
+.button-search {
+  background-color: rgba(118, 139, 60, 0.4);
+  padding: 8px;
+  padding-left: 12px;
+  border: 2px solid rgb(79, 85, 64);
+  border-radius: 8px;
+  font-size: 24px;
+  margin: 0 8px;
+}
+.button-current {
+  background-color: rgba(80, 90, 54, 0.4);
+  padding: 8px;
+  padding-left: 12px;
+  border: 2px solid rgb(79, 85, 64);
+  border-radius: 8px;
+  font-size: 24px;
+}
+.main-window {
+  border: 2px solid rgb(79, 85, 64);
+  border-radius: 8px;
+  background: rgba(118, 139, 60, 0.1);
+  margin: 4px 0;
+}
+ul {
+  text-align: left;
+  list-style-type: none;
+}
+li {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+.cityName {
+  font-size: 48px;
+  font-weight: 600;
+  color: rgb(39, 46, 21);
+  margin: 12px 8px 8px 24px;
+  text-transform: capitalize;
+}
+.main {
+  display: grid;
+  grid-template-columns: auto;
+}
+.grid-left {
+  grid-column: 1/5;
+}
+.grid-right {
+  grid-column: 6/12;
+}
+.item {
+  width: 180px;
+}
+.footer {
+  display: block;
+  width: 70%;
+  font-weight: 500;
+  font-size: 20px;
+  border: 1px solid rgb(45, 53, 23);
+  border-radius: 8px;
+  background: rgba(141, 163, 80, 0.2);
+  text-align: center;
+  color: #010a01;
+  line-height: 0.8;
+  padding: 4px 16px;
+  margin: auto;
+}
+.githab {
+  color: #000;
+}
