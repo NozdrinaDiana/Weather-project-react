@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
-export default function Weather() {
-  let [city, setCity] = useState("");
+export default function Weather(props) {
+  let [city, setCity] = useState(props.defaultCity);
   let [forecast, setForecast] = useState("");
 
   function handleSubmit(event) {
@@ -14,21 +15,26 @@ export default function Weather() {
 
   function getForecast(response) {
     console.log(response.data);
-   
       setForecast(
         <div>
           <div className="cityName">{city}, {response.data.sys.country}</div>
-            <div className="main">
-            <ul >
-                <li className="grid-left">Temperature: {Math.round(response.data.main.temp)}C°</li>
-                <li className="grid-left">Description: {response.data.weather[0].description}</li>
-                <li className="grid-left">Humidity: {response.data.main.humidity}%</li>
-                <li className="grid-left">Wind: {Math.round(response.data.wind.speed)}m/c</li>
-            </ul>
-            <div className="grid-right">
-                 <img src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`} alt={response.data.weather[0].description } className="item"/>
+          <FormattedDate date={new Date(response.data.dt*1000)} />
+          <div className="main">
+            <div className="grid-left">
+              <p className="temperature">
+                <img src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
+                     alt={response.data.weather[0].description} className="item " />
+                     {Math.round(response.data.main.temp)}<sup className="celcius"> C°| F°</sup>
+              </p>
             </div>
-          </div>
+              <div className="grid-right">
+                <ul >
+                  <li>Description: {response.data.weather[0].description}</li>
+                  <li>Humidity: {response.data.main.humidity}%</li>
+                  <li>Wind: {Math.round(response.data.wind.speed)}m/c</li>
+                </ul>
+              </div>
+        </div>
         </div>
     );
   }
@@ -41,7 +47,7 @@ export default function Weather() {
     <div>
         <form onSubmit={handleSubmit}>
             <label for="city-name" class="label-city-name">Please, enter the city name:</label>
-            <input type="search" className="form-text" placeholder="Entre a city" onChange={updateCity} />
+            <input type="search" className="form-text" placeholder="Enter a city" onChange={updateCity} />
             <input type="submit" className="button-search" value="Search" />
             <input type="button" className="button-current" value="Current" id="button-current-input"/>
         </form>

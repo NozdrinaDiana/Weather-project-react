@@ -5,7 +5,7 @@ body {
 }
 .App {
   margin: 12px auto;
-  width: 70%;
+  max-width: 60%;
   font-family: sans-serif;
   background: rgba(141, 163, 80, 0.2);
   border: 1px solid rgb(45, 53, 23);
@@ -59,7 +59,7 @@ ul {
 li {
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 .cityName {
   font-size: 48px;
@@ -68,22 +68,43 @@ li {
   margin: 12px 8px 8px 24px;
   text-transform: capitalize;
 }
+.current-date {
+  font-size: 28px;
+  margin-left: 24px;
+  font-weight: 600;
+  color: rgb(39, 46, 21);
+}
+.st {
+  font-size: 16px;
+}
 .main {
+  margin-top: 16px;
   display: grid;
   grid-template-columns: auto;
 }
 .grid-left {
-  grid-column: 1/5;
+  grid-column: 1/7;
 }
 .grid-right {
-  grid-column: 6/12;
+  grid-column: 8/12;
+}
+
+.temperature {
+  font-size: 60px;
+  width: 600;
+  margin: 24px 28px 0 16px;
+  color: rgb(39, 46, 21);
+}
+.celcius {
+  font-size: 20px;
 }
 .item {
-  width: 180px;
+  width: 140px;
+  margin: -44px 0;
 }
 .footer {
   display: block;
-  width: 70%;
+  max-width: 60%;
   font-weight: 500;
   font-size: 20px;
   border: 1px solid rgb(45, 53, 23);

@@ -1,12 +1,12 @@
 import "./styles.css";
-import Form from "./Form";
+import Weather from "./Weather";
 
 
 export default function App() {
   return (
     <div>
     <div className="App">
-        <Form />
+        <Weather defaultCity="New York" />
         </div>
      <footer className="footer">
       <a class="githab"
