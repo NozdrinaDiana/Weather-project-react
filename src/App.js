@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles.css";
 import Weather from "./Weather";
 
@@ -7,7 +8,8 @@ export default function App() {
     <div>
     <div className="App">
         <Weather defaultCity="New York" />
-        </div>
+    </div>
+      
      <footer className="footer">
       <a class="githab"
         href="https://github.com/NozdrinaDiana/Weather-project-react"

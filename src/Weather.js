@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
+import Temperature from "./Temperature";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -21,12 +22,13 @@ export default function Weather(props) {
           <FormattedDate date={new Date(response.data.dt*1000)} />
           <div className="main">
             <div className="grid-left">
-              <p className="temperature">
                 <img src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
-                     alt={response.data.weather[0].description} className="item " />
-                     {Math.round(response.data.main.temp)}<sup className="celcius"> C°| F°</sup>
-              </p>
+                  alt={response.data.weather[0].description} className="item " />
             </div>
+              <div className="grid-center temperature">
+                <Temperature Metric={response.data.main.temp}/>
+              </div>
+          
               <div className="grid-right">
                 <ul >
                   <li>Description: {response.data.weather[0].description}</li>

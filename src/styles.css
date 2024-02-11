@@ -83,24 +83,33 @@ li {
   grid-template-columns: auto;
 }
 .grid-left {
-  grid-column: 1/7;
+  grid-column: 1/1;
+}
+.grid-center {
+  grid-column: 2/2;
 }
 .grid-right {
-  grid-column: 8/12;
+  grid-column: 3/12;
+  padding-left: 52px;
 }
 
 .temperature {
   font-size: 60px;
   width: 600;
-  margin: 24px 28px 0 16px;
+  margin: 24px 4px 0 0;
   color: rgb(39, 46, 21);
 }
 .celcius {
   font-size: 20px;
+  color: rgb(39, 46, 21);
+}
+.celcius:hover,
+.celcius:active {
+  color: rgb(90, 119, 23);
 }
 .item {
-  width: 140px;
-  margin: -44px 0;
+  width: 130px;
+  margin: -8px 0 -20px 20px;
 }
 .footer {
   display: block;
