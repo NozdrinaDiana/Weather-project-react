@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormattedDate from "./FormattedDate";
 import Temperature from "./Temperature";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
-  let [forecast, setForecast] = useState("");
+  let [forecast, setForecast] = useState("")
+
+    useEffect(()=> {
+    handleSubmit({preventDefault: function(){}})
+  }, [])
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -18,6 +23,7 @@ export default function Weather(props) {
     console.log(response.data);
       setForecast(
         <div>
+          <div className="main-window">
           <div className="cityName">{city}, {response.data.sys.country}</div>
           <FormattedDate date={new Date(response.data.dt*1000)} />
           <div className="main">
@@ -27,8 +33,7 @@ export default function Weather(props) {
             </div>
               <div className="grid-center temperature">
                 <Temperature Metric={response.data.main.temp}/>
-              </div>
-          
+              </div>         
               <div className="grid-right">
                 <ul >
                   <li>Description: {response.data.weather[0].description}</li>
@@ -36,7 +41,11 @@ export default function Weather(props) {
                   <li>Wind: {Math.round(response.data.wind.speed)}m/c</li>
                 </ul>
               </div>
-        </div>
+            </div>
+            </div>
+          <div>
+             <WeatherForecast coordinates={response.data.coord} />
+         </div>         
         </div>
     );
   }
@@ -48,12 +57,12 @@ export default function Weather(props) {
   return (
     <div>
         <form onSubmit={handleSubmit}>
-            <label for="city-name" class="label-city-name">Please, enter the city name:</label>
+            <label for="city-name" className="label-city-name">Please, enter the city name:</label>
             <input type="search" className="form-text" placeholder="Enter a city" onChange={updateCity} />
             <input type="submit" className="button-search" value="Search" />
             <input type="button" className="button-current" value="Current" id="button-current-input"/>
         </form>
-      <div className="main-window">{forecast}</div>
+      <div >{forecast}</div>    
     </div>
   );
 }
