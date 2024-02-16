@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import Temperature from "./Temperature";
 import WeatherForecast from "./WeatherForecast";
@@ -7,10 +7,6 @@ import axios from "axios";
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
   let [forecast, setForecast] = useState("")
-
-    useEffect(()=> {
-    handleSubmit({preventDefault: function(){}})
-  }, [])
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -54,15 +50,29 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  return (
-    <div>
+  if(forecast){
+    return (
+      <div>
+          <form onSubmit={handleSubmit}>
+              <label for="city-name" className="label-city-name">Please, enter the city name:</label>
+              <input type="search" className="form-text" placeholder="Enter a city" onChange={updateCity} />
+              <input type="submit" className="button-search" value="Search" />
+              <input type="button" className="button-current" value="Current" id="button-current-input"/>
+          </form>
+        <div >{forecast}</div>    
+      </div>
+    );
+  } else {
+    handleSubmit({preventDefault: function() {}})
+    return (
+      <div>
         <form onSubmit={handleSubmit}>
-            <label for="city-name" className="label-city-name">Please, enter the city name:</label>
-            <input type="search" className="form-text" placeholder="Enter a city" onChange={updateCity} />
-            <input type="submit" className="button-search" value="Search" />
-            <input type="button" className="button-current" value="Current" id="button-current-input"/>
+          <label for="city-name" className="label-city-name">Please, enter the city name:</label>
+          <input type="search" className="form-text" placeholder="Enter a city" onChange={updateCity} />
+          <input type="submit" className="button-search" value="Search" />
+          <input type="button" className="button-current" value="Current" id="button-current-input"/>
         </form>
-      <div >{forecast}</div>    
-    </div>
-  );
+      </div>
+    )
+  }
 }
