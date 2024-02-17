@@ -11,7 +11,7 @@ export default function App() {
     </div>
       
      <footer className="footer">
-      <a class="githab"
+      <a className="githab"
         href="https://github.com/NozdrinaDiana/Weather-project-react"
         target="_blank" rel="noreferrer" >Open-source code </a>  by Diana Nozdrina
     </footer>

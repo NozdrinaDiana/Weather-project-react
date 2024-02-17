@@ -4,12 +4,12 @@ body {
   background-size: cover;
 }
 .App {
-  margin: 12px auto;
+  margin: 8px auto;
   max-width: 60%;
   font-family: sans-serif;
   background: rgba(141, 163, 80, 0.2);
   border: 1px solid rgb(45, 53, 23);
-  padding: 12px;
+  padding: 8px 12px;
   border-radius: 12px;
 }
 .label-city-name {
@@ -19,7 +19,7 @@ body {
 }
 .form-text {
   size: 40;
-  width: 240px;
+  width: 45%;
   padding: 8px;
   padding-left: 16px;
   border: 2px solid rgb(79, 85, 64);
@@ -38,19 +38,11 @@ body {
   font-size: 24px;
   margin: 0 8px;
 }
-.button-current {
-  background-color: rgba(80, 90, 54, 0.4);
-  padding: 8px;
-  padding-left: 12px;
-  border: 2px solid rgb(79, 85, 64);
-  border-radius: 8px;
-  font-size: 24px;
-}
 .main-window {
   border: 2px solid rgb(79, 85, 64);
   border-radius: 8px;
   background: rgba(118, 139, 60, 0.1);
-  margin: 4px 0;
+  margin: 0;
 }
 ul {
   text-align: left;
@@ -92,15 +84,14 @@ li {
   grid-column: 3/12;
   padding-left: 52px;
 }
-
 .temperature {
-  font-size: 60px;
+  font-size: 80px;
   width: 600;
-  margin: 24px 4px 0 0;
+  margin: 0 4px 0 0;
   color: rgb(39, 46, 21);
 }
 .celcius {
-  font-size: 20px;
+  font-size: 24px;
   color: rgb(39, 46, 21);
 }
 .celcius:hover,
@@ -127,4 +118,82 @@ li {
 }
 .githab {
   color: #000;
+}
+@media screen and (max-width: 600px) {
+  .App {
+    margin: 8px auto;
+    max-width: 95%;
+  }
+  .label-city-name {
+    font-size: 16px;
+    margin-right: 4px;
+  }
+  .form-text {
+    size: 40;
+    width: 80%;
+    padding: 8px;
+    padding-left: 0;
+    font-size: 20px;
+  }
+  .cityName {
+    font-size: 32px;
+  }
+  .temperature {
+    font-size: 48px;
+  }
+  .celcius {
+    font-size: 12px;
+  }
+  ul {
+    text-align: center;
+  }
+  li {
+    font-size: 12px;
+  }
+  .main {
+    display: flex;
+    flex-direction: row;
+  }
+  .main-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-left {
+    margin: 0;
+    padding: 0;
+  }
+  .item {
+    width: 90px;
+    margin: 0;
+  }
+  .grid-left {
+    margin: 0;
+    padding: 0;
+  }
+  .grid-center {
+    margin: 0;
+    padding: 0;
+  }
+  .grid-right {
+    padding: 0;
+  }
+
+  .footer {
+    max-width: 95%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .App {
+    margin: 8px auto;
+    max-width: 85%;
+  }
+  .grid-left {
+    grid-column: 1/1;
+  }
+  .grid-center {
+    grid-column: 2/2;
+  }
+  .footer {
+    max-width: 85%;
+  }
 }

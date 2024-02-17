@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 export default function Temperature(props) {
     let [unit, setUnit] = useState("Metric");
-  //  let [temperature, setTemperature] = useState(props.Metric);
 
     function Fahrenheit(event) {
         event.preventDefault();

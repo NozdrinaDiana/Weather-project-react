@@ -12,20 +12,18 @@ export default function WeatherForecast(props) {
     }, [props.coordinates]);
 
    function handleResponse(response) {
-       console.log(response.data);
        setFutureForecast(response.data.daily);
        setLoaded(true);
     }
 
     if (loaded) {
-        console.log(futureForecast);
         return (
         <div>
-        <div className="grid">
+        <div className="flex">
                     {futureForecast.map(function (dailyForecast, index) {
                         if (index > 0 && index < 7 ) {
                             return (
-                                <div className="grid-forecast" key={index}>
+                                <div className="flex-forecast" key={index}>
                                     <WeatherForecastDay data={dailyForecast} />
                                 </div>
                             );
@@ -38,7 +36,7 @@ export default function WeatherForecast(props) {
         );       
 
     } else {
-        let apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
+        let apiKey = "ad793a6d772939c31783de5822791acf";
         let latitude = props.coordinates.lat;
         let longitude = props.coordinates.lon;
         let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;

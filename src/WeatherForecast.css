@@ -1,15 +1,16 @@
-.grid {
-  display: inline-grid;
-  grid-template-columns: 15% 15% 15% 15% 15% 15%;
-  grid-column-gap: 1.2rem;
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
 }
-.grid-forecast {
+.flex-forecast {
   border: 1px solid rgb(45, 53, 23);
   border-radius: 8px;
   background: rgba(142, 158, 98, 0.2);
-  margin: 4px auto 0;
+  margin: 8px auto;
   text-align: center;
-  line-height: 0.4;
+  line-height: 0.5;
   color: #000;
   font-weight: 500;
   font-size: 16px;
@@ -21,4 +22,17 @@
 .item-forecast {
   width: 90px;
   margin: 0;
+}
+@media screen and (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 992px) {
+  .flex-forecast {
+    font-size: 12px;
+  }
+  .item-forecast {
+    width: 70px;
+  }
 }

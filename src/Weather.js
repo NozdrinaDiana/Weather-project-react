@@ -16,17 +16,18 @@ export default function Weather(props) {
   }
 
   function getForecast(response) {
-    console.log(response.data);
       setForecast(
         <div>
           <div className="main-window">
           <div className="cityName">{city}, {response.data.sys.country}</div>
           <FormattedDate date={new Date(response.data.dt*1000)} />
           <div className="main">
+            <div className="main-left">
             <div className="grid-left">
                 <img src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
                   alt={response.data.weather[0].description} className="item " />
-            </div>
+              </div>
+              </div>
               <div className="grid-center temperature">
                 <Temperature Metric={response.data.main.temp}/>
               </div>         
@@ -57,7 +58,6 @@ export default function Weather(props) {
               <label for="city-name" className="label-city-name">Please, enter the city name:</label>
               <input type="search" className="form-text" placeholder="Enter a city" onChange={updateCity} />
               <input type="submit" className="button-search" value="Search" />
-              <input type="button" className="button-current" value="Current" id="button-current-input"/>
           </form>
         <div >{forecast}</div>    
       </div>
@@ -70,7 +70,6 @@ export default function Weather(props) {
           <label for="city-name" className="label-city-name">Please, enter the city name:</label>
           <input type="search" className="form-text" placeholder="Enter a city" onChange={updateCity} />
           <input type="submit" className="button-search" value="Search" />
-          <input type="button" className="button-current" value="Current" id="button-current-input"/>
         </form>
       </div>
     )
